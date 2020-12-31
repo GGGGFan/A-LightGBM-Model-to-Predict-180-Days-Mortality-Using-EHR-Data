@@ -1,0 +1,739 @@
+with t0 as
+(
+select distinct m.person_id,
+null as alb_1,
+null as alb_2,
+null as alkphos_1,
+null as alkphos_2,
+null as alkphos_3,
+null as alkphos_4,
+null as co2_1,
+null as co2_2,
+null as co2_3,
+null as co2_4,
+null as co2_5,
+null as blrb_1,
+null as blrb_2,
+null as blrb_3,
+null as bp_dia,
+null as bp_sys,
+null as nitro,
+null as cprot,
+null as creat_1,
+null as creat_2,
+null as creat_3,
+null as creat_4,
+null as creat_5,
+null as folate,
+null as glucose_1,
+null as glucose_2,
+null as glucose_3,
+null as glucose_4,
+null as glucose_5,
+null as homoglo_1,
+null as homoglo_2,
+null as homoglo_3,
+null as homoglo_4,
+null as homoglo_5,
+null as iron_1,
+null as iron_2,
+null as iron_3,
+null as lacate,
+null as map_1,
+null as map_2,
+null as platelet,
+null as potass,
+null as protein_1,
+null as protein_2,
+null as protein_3,
+null as protein_4,
+null as pulse,
+null as neutrophils,
+null as sodium,
+null as calcium_1,
+null as calcium_2,
+null as calcium_3,
+null as cholest_1,
+null as cholest_2,
+null as cholest_3,
+null as cholest_4,
+null as cholest_5,
+null as triglyc_1,
+null as triglyc_2,
+null as uricacid_1,
+null as vb12,
+null as vd,
+null as spo2_1,
+null as spo2_2,
+null as alb_1_latest,
+null as alb_2_latest,
+null as alkphos_1_latest,
+null as alkphos_2_latest,
+null as alkphos_3_latest,
+null as alkphos_4_latest,
+null as co2_1_latest,
+null as co2_2_latest,
+null as co2_3_latest,
+null as co2_4_latest,
+null as co2_5_latest,
+null as blrb_1_latest,
+null as blrb_2_latest,
+null as blrb_3_latest,
+null as bp_dia_latest,
+null as bp_sys_latest,
+null as nitro_latest,
+null as cprot_latest,
+null as creat_1_latest,
+null as creat_2_latest,
+null as creat_3_latest,
+null as creat_4_latest,
+null as creat_5_latest,
+null as folate_latest,
+null as glucose_1_latest,
+null as glucose_2_latest,
+null as glucose_3_latest,
+null as glucose_4_latest,
+null as glucose_5_latest,
+null as homoglo_1_latest,
+null as homoglo_2_latest,
+null as homoglo_3_latest,
+null as homoglo_4_latest,
+null as homoglo_5_latest,
+null as iron_1_latest,
+null as iron_2_latest,
+null as iron_3_latest,
+null as lacate_latest,
+null as map_1_latest,
+null as map_2_latest,
+null as platelet_latest,
+null as potass_latest,
+null as protein_1_latest,
+null as protein_2_latest,
+null as protein_3_latest,
+null as protein_4_latest,
+null as pulse_latest,
+null as neutrophils_latest,
+null as sodium_latest,
+null as calcium_1_latest,
+null as calcium_2_latest,
+null as calcium_3_latest,
+null as cholest_1_latest,
+null as cholest_2_latest,
+null as cholest_3_latest,
+null as cholest_4_latest,
+null as cholest_5_latest,
+null as triglyc_1_latest,
+null as triglyc_2_latest,
+null as uricacid_1_latest,
+null as vb12_latest,
+null as vd_latest,
+null as spo2_1_latest,
+null as spo2_2_latest
+from measurement m
+),
+t1 as
+(
+select person_id, avg(value_as_number) as alb_1_avg,
+max(measurement_date) as date, value_as_number as alb_1_latest
+from measurement
+where measurement_concept_id = 3024561
+group by person_id
+),
+t2 as
+(
+select person_id, avg(value_as_number) as alb_2_avg,
+max(measurement_date) as date, value_as_number as alb_2_latest
+from measurement
+where measurement_concept_id = 3025313
+group by person_id
+),
+t3 as
+(
+select person_id, avg(value_as_number) as alkphos_1_avg,
+max(measurement_date) as date, value_as_number as alkphos_1_latest
+from measurement
+where measurement_concept_id = 3002069
+group by person_id
+),
+t4 as
+(
+select person_id, avg(value_as_number) as alkphos_2_avg,
+max(measurement_date) as date, value_as_number as alkphos_2_latest
+from measurement
+where measurement_concept_id = 3036955
+group by person_id
+),
+t5 as
+(
+select person_id, avg(value_as_number) as alkphos_3_avg,
+max(measurement_date) as date, value_as_number as alkphos_3_latest
+from measurement
+where measurement_concept_id = 3018910
+group by person_id
+),
+t7 as
+(
+select person_id, avg(value_as_number) as co2_1_avg,
+max(measurement_date) as date, value_as_number as co2_1_latest
+from measurement
+where measurement_concept_id = 3015632
+group by person_id
+),
+t8 as
+(
+select person_id, avg(value_as_number) as co2_2_avg,
+max(measurement_date) as date, value_as_number as co2_2_latest
+from measurement
+where measurement_concept_id = 3021447
+group by person_id
+),
+t9 as
+(
+select person_id, avg(value_as_number) as co2_3_avg,
+max(measurement_date) as date, value_as_number as co2_3_latest
+from measurement
+where measurement_concept_id = 3027946
+group by person_id
+),
+t10 as
+(
+select person_id, avg(value_as_number) as co2_4_avg,
+max(measurement_date) as date, value_as_number as co2_4_latest
+from measurement
+where measurement_concept_id = 3007696
+group by person_id
+),
+t11 as
+(
+select person_id, avg(value_as_number) as co2_5_avg,
+max(measurement_date) as date, value_as_number as co2_5_latest
+from measurement
+where measurement_concept_id = 3021513
+group by person_id
+),
+t13 as
+(
+select person_id, avg(value_as_number) as blrb_1_avg,
+max(measurement_date) as date, value_as_number as blrb_1_latest
+from measurement
+where measurement_concept_id = 3028193
+group by person_id
+),
+t14 as
+(
+select person_id, avg(value_as_number) as blrb_2_avg,
+max(measurement_date) as date, value_as_number as blrb_2_latest
+from measurement
+where measurement_concept_id = 3024128
+group by person_id
+),
+t15 as
+(
+select person_id, avg(value_as_number) as blrb_3_avg,
+max(measurement_date) as date, value_as_number as blrb_3_latest
+from measurement
+where measurement_concept_id = 3027597
+group by person_id
+),
+t16 as
+(
+select person_id, avg(value_as_number) as bp_dia_avg,
+max(measurement_date) as date, value_as_number as bp_dia_latest
+from measurement
+where measurement_concept_id = 4154790
+group by person_id
+),
+t17 as
+(
+select person_id, avg(value_as_number) as bp_sys_avg,
+max(measurement_date) as date, value_as_number as bp_sys_latest
+from measurement
+where measurement_concept_id = 4152194
+group by person_id
+),
+t18 as
+(
+select person_id, avg(value_as_number) as nitro_avg,
+max(measurement_date) as date, value_as_number as nitro_latest
+from measurement
+where measurement_concept_id = 3004295
+group by person_id
+),
+t19 as
+(
+select person_id, avg(value_as_number) as cprot_avg,
+max(measurement_date) as date, value_as_number as cprot_latest
+from measurement
+where measurement_concept_id = 3010156
+group by person_id
+),
+t20 as
+(
+select person_id, avg(value_as_number) as creat_1_avg,
+max(measurement_date) as date, value_as_number as creat_1_latest
+from measurement
+where measurement_concept_id = 3005770
+group by person_id
+),
+t21 as
+(
+select person_id, avg(value_as_number) as creat_2_avg,
+max(measurement_date) as date, value_as_number as creat_2_latest
+from measurement
+where measurement_concept_id = 3016723
+group by person_id
+),
+t22 as
+(
+select person_id, avg(value_as_number) as creat_3_avg,
+max(measurement_date) as date, value_as_number as creat_3_latest
+from measurement
+where measurement_concept_id = 3017250
+group by person_id
+),
+t23 as
+(
+select person_id, avg(value_as_number) as creat_4_avg,
+max(measurement_date) as date, value_as_number as creat_4_latest
+from measurement
+where measurement_concept_id = 3016662
+group by person_id
+),
+t24 as
+(
+select person_id, avg(value_as_number) as creat_5_avg,
+max(measurement_date) as date, value_as_number as creat_5_latest
+from measurement
+where measurement_concept_id = 3051825
+group by person_id
+),
+t26 as
+(
+select person_id, avg(value_as_number) as folate_avg,
+max(measurement_date) as date, value_as_number as folate_latest
+from measurement
+where measurement_concept_id = 3035569
+group by person_id
+),
+t27 as
+(
+select person_id, avg(value_as_number) as glucose_1_avg,
+max(measurement_date) as date, value_as_number as glucose_1_latest
+from measurement
+where measurement_concept_id = 3000483
+group by person_id
+),
+t28 as
+(
+select person_id, avg(value_as_number) as glucose_2_avg,
+max(measurement_date) as date, value_as_number as glucose_2_latest
+from measurement
+where measurement_concept_id = 3010300
+group by person_id
+),
+t29 as
+(
+select person_id, avg(value_as_number) as glucose_3_avg,
+max(measurement_date) as date, value_as_number as glucose_3_latest
+from measurement
+where measurement_concept_id = 3004501
+group by person_id
+),
+t30 as
+(
+select person_id, avg(value_as_number) as glucose_4_avg,
+max(measurement_date) as date, value_as_number as glucose_4_latest
+from measurement
+where measurement_concept_id = 3034962
+group by person_id
+),
+t31 as
+(
+select person_id, avg(value_as_number) as glucose_5_avg,
+max(measurement_date) as date, value_as_number as glucose_5_latest
+from measurement
+where measurement_concept_id = 3011424
+group by person_id
+),
+t33 as
+(
+select person_id, avg(value_as_number) as homoglo_1_avg,
+max(measurement_date) as date, value_as_number as homoglo_1_latest
+from measurement
+where measurement_concept_id = 3028653
+group by person_id
+),
+t34 as
+(
+select person_id, avg(value_as_number) as homoglo_2_avg,
+max(measurement_date) as date, value_as_number as homoglo_2_latest
+from measurement
+where measurement_concept_id = 3000963
+group by person_id
+),
+t35 as
+(
+select person_id, avg(value_as_number) as homoglo_3_avg,
+max(measurement_date) as date, value_as_number as homoglo_3_latest
+from measurement
+where measurement_concept_id = 3002173
+group by person_id
+),
+t36 as
+(
+select person_id, avg(value_as_number) as homoglo_4_avg,
+max(measurement_date) as date, value_as_number as homoglo_4_latest
+from measurement
+where measurement_concept_id = 3022493
+group by person_id
+),
+t37 as
+(
+select person_id, avg(value_as_number) as homoglo_5_avg,
+max(measurement_date) as date, value_as_number as homoglo_5_latest
+from measurement
+where measurement_concept_id = 3004119
+group by person_id
+),
+t39 as
+(
+select person_id, avg(value_as_number) as iron_1_avg,
+max(measurement_date) as date, value_as_number as iron_1_latest
+from measurement
+where measurement_concept_id = 3000185
+group by person_id
+),
+t40 as
+(
+select person_id, avg(value_as_number) as iron_2_avg,
+max(measurement_date) as date, value_as_number as iron_2_latest
+from measurement
+where measurement_concept_id = 3002400
+group by person_id
+),
+t41 as
+(
+select person_id, avg(value_as_number) as iron_3_avg,
+max(measurement_date) as date, value_as_number as iron_3_latest
+from measurement
+where measurement_concept_id = 3021044
+group by person_id
+),
+t42 as
+(
+select person_id, avg(value_as_number) as lacate_avg,
+max(measurement_date) as date, value_as_number as lacate_latest
+from measurement
+where measurement_concept_id = 3018405
+group by person_id
+),
+t43 as
+(
+select person_id, avg(value_as_number) as map_1_avg,
+max(measurement_date) as date, value_as_number as map_1_latest
+from measurement
+where measurement_concept_id = 3021706
+group by person_id
+),
+t44 as
+(
+select person_id, avg(value_as_number) as map_2_avg,
+max(measurement_date) as date, value_as_number as map_2_latest
+from measurement
+where measurement_concept_id = 3027801
+group by person_id
+),
+t45 as
+(
+select person_id, avg(value_as_number) as platelet_avg,
+max(measurement_date) as date, value_as_number as platelet_latest
+from measurement
+where measurement_concept_id = 3024929
+group by person_id
+),
+t46 as
+(
+select person_id, avg(value_as_number) as potass_avg,
+max(measurement_date) as date, value_as_number as potass_latest
+from measurement
+where measurement_concept_id = 3023103
+group by person_id
+),
+t47 as
+(
+select person_id, avg(value_as_number) as protein_1_avg,
+max(measurement_date) as date, value_as_number as protein_1_latest
+from measurement
+where measurement_concept_id = 3020630
+group by person_id
+),
+t48 as
+(
+select person_id, avg(value_as_number) as protein_2_avg,
+max(measurement_date) as date, value_as_number as protein_2_latest
+from measurement
+where measurement_concept_id = 3029872
+group by person_id
+),
+t49 as
+(
+select person_id, avg(value_as_number) as protein_3_avg,
+max(measurement_date) as date, value_as_number as protein_3_latest
+from measurement
+where measurement_concept_id = 3037121
+group by person_id
+),
+t50 as
+(
+select person_id, avg(value_as_number) as protein_4_avg,
+max(measurement_date) as date, value_as_number as protein_4_latest
+from measurement
+where measurement_concept_id = 3005029
+group by person_id
+),
+t51 as
+(
+select person_id, avg(value_as_number) as pulse_avg,
+max(measurement_date) as date, value_as_number as pulse_latest
+from measurement
+where measurement_concept_id = 4239408
+group by person_id
+),
+t52 as
+(
+select person_id, avg(value_as_number) as neutrophils_avg,
+max(measurement_date) as date, value_as_number as neutrophils_latest
+from measurement
+where measurement_concept_id = 3007144
+group by person_id
+),
+t53 as
+(
+select person_id, avg(value_as_number) as sodium_avg,
+max(measurement_date) as date, value_as_number as sodium_latest
+from measurement
+where measurement_concept_id = 3019550
+group by person_id
+),
+t54 as
+(
+select person_id, avg(value_as_number) as calcium_1_avg,
+max(measurement_date) as date, value_as_number as calcium_1_latest
+from measurement
+where measurement_concept_id = 3006906
+group by person_id
+),
+t55 as
+(
+select person_id, avg(value_as_number) as calcium_2_avg,
+max(measurement_date) as date, value_as_number as calcium_2_latest
+from measurement
+where measurement_concept_id = 3013784
+group by person_id
+),
+t56 as
+(
+select person_id, avg(value_as_number) as calcium_3_avg,
+max(measurement_date) as date, value_as_number as calcium_3_latest
+from measurement
+where measurement_concept_id = 44783982
+group by person_id
+),
+t58 as
+(
+select person_id, avg(value_as_number) as cholest_1_avg,
+max(measurement_date) as date, value_as_number as cholest_1_latest
+from measurement
+where measurement_concept_id = 3009596
+group by person_id
+),
+t59 as
+(
+select person_id, avg(value_as_number) as cholest_2_avg,
+max(measurement_date) as date, value_as_number as cholest_2_latest
+from measurement
+where measurement_concept_id = 3009966
+group by person_id
+),
+t60 as
+(
+select person_id, avg(value_as_number) as cholest_3_avg,
+max(measurement_date) as date, value_as_number as cholest_3_latest
+from measurement
+where measurement_concept_id = 3027114
+group by person_id
+),
+t61 as
+(
+select person_id, avg(value_as_number) as cholest_4_avg,
+max(measurement_date) as date, value_as_number as cholest_4_latest
+from measurement
+where measurement_concept_id = 3007070
+group by person_id
+),
+t62 as
+(
+select person_id, avg(value_as_number) as cholest_5_avg,
+max(measurement_date) as date, value_as_number as cholest_5_latest
+from measurement
+where measurement_concept_id = 3007352
+group by person_id
+),
+t64 as
+(
+select person_id, avg(value_as_number) as triglyc_1_avg,
+max(measurement_date) as date, value_as_number as triglyc_1_latest
+from measurement
+where measurement_concept_id = 3000637
+group by person_id
+),
+t65 as
+(
+select person_id, avg(value_as_number) as triglyc_2_avg,
+max(measurement_date) as date, value_as_number as triglyc_2_latest
+from measurement
+where measurement_concept_id = 3022192
+group by person_id
+),
+t66 as
+(
+select person_id, avg(value_as_number) as uricacid_1_avg,
+max(measurement_date) as date, value_as_number as uricacid_1_latest
+from measurement
+where measurement_concept_id = 3037556
+group by person_id
+),
+t68 as
+(
+select person_id, avg(value_as_number) as vb12_avg,
+max(measurement_date) as date, value_as_number as vb12_latest
+from measurement
+where measurement_concept_id = 3000593
+group by person_id
+),
+t69 as
+(
+select person_id, avg(value_as_number) as vd_avg,
+max(measurement_date) as date, value_as_number as vd_latest
+from measurement
+where measurement_concept_id = 40765040
+group by person_id
+),
+t70 as
+(
+select person_id, avg(value_as_number) as spo2_1_avg,
+max(measurement_date) as date, value_as_number as spo2_1_latest
+from measurement
+where measurement_concept_id = 3016502
+group by person_id
+),
+t71 as
+(
+select person_id, avg(value_as_number) as spo2_2_avg,
+max(measurement_date) as date, value_as_number as spo2_2_latest
+from measurement
+where measurement_concept_id = 3027801
+group by person_id
+)
+
+
+select t0.person_id, t1.alb_1_avg, t2.alb_2_avg,
+t3.alkphos_1_avg, t4.alkphos_2_avg, t5.alkphos_3_avg,
+t7.co2_1_avg, t8.co2_2_avg, t9.co2_3_avg, t10.co2_4_avg,
+t11.co2_5_avg, t13.blrb_1_avg, t14.blrb_2_avg,
+t15.blrb_3_avg, t16.bp_dia_avg, t17.bp_sys_avg, t18.nitro_avg, t19.cprot_avg,
+t20.creat_1_avg, t21.creat_2_avg, t22.creat_3_avg,
+t23.creat_4_avg, t24.creat_5_avg, t26.folate_avg, t27.glucose_1_avg,
+t28.glucose_2_avg, t29.glucose_3_avg,
+t30.glucose_4_avg, t31.glucose_5_avg, t33.homoglo_1_avg, t34.homoglo_2_avg, t35.homoglo_3_avg,
+t36.homoglo_4_avg, t37.homoglo_5_avg, t39.iron_1_avg, t40.iron_2_avg, t41.iron_3_avg, t42.lacate_avg,
+t43.map_1_avg, t44.map_2_avg, t45.platelet_avg, t46.potass_avg, t47.protein_1_avg,
+t48.protein_2_avg, t49.protein_3_avg,
+t50.protein_4_avg, t51.pulse_avg, t52.neutrophils_avg, t53.sodium_avg, t54.calcium_1_avg,
+t55.calcium_2_avg, t56.calcium_3_avg, t58.cholest_1_avg, t59.cholest_2_avg, t60.cholest_3_avg,
+t61.cholest_4_avg, t62.cholest_5_avg, t64.triglyc_1_avg, t65.triglyc_2_avg, t66.uricacid_1_avg,
+t68.vb12_avg, t69.vd_avg, t70.spo2_1_avg, t71.spo2_2_avg,
+t1.alb_1_latest, t2.alb_2_latest, t3.alkphos_1_latest, t4.alkphos_2_latest, t5.alkphos_3_latest,
+t7.co2_1_latest, t8.co2_2_latest, t9.co2_3_latest, t10.co2_4_latest,
+t11.co2_5_latest, t13.blrb_1_latest, t14.blrb_2_latest,
+t15.blrb_3_latest, t16.bp_dia_latest, t17.bp_sys_latest, t18.nitro_latest,
+t19.cprot_latest, t20.creat_1_latest, t21.creat_2_latest, t22.creat_3_latest,
+t23.creat_4_latest, t24.creat_5_latest, t26.folate_latest, t27.glucose_1_latest,
+t28.glucose_2_latest, t29.glucose_3_latest,
+t30.glucose_4_latest, t31.glucose_5_latest, t33.homoglo_1_latest,
+t34.homoglo_2_latest, t35.homoglo_3_latest,
+t36.homoglo_4_latest, t37.homoglo_5_latest, t39.iron_1_latest,
+t40.iron_2_latest, t41.iron_3_latest, t42.lacate_latest,
+t43.map_1_latest, t44.map_2_latest, t45.platelet_latest, t46.potass_latest,
+t47.protein_1_latest, t48.protein_2_latest, t49.protein_3_latest,
+t50.protein_4_latest, t51.pulse_latest, t52.neutrophils_latest,
+t53.sodium_latest, t54.calcium_1_latest,
+t55.calcium_2_latest, t56.calcium_3_latest, t58.cholest_1_latest,
+t59.cholest_2_latest, t60.cholest_3_latest,
+t61.cholest_4_latest, t62.cholest_5_latest, t64.triglyc_1_latest,
+t65.triglyc_2_latest, t66.uricacid_1_latest,
+t68.vb12_latest, t69.vd_latest, t70.spo2_1_latest, t71.spo2_2_latest
+from t0
+left outer join t1 on t0.person_id = t1.person_id
+left outer join t2 on t0.person_id = t2.person_id
+left outer join t3 on t0.person_id = t3.person_id
+left outer join t4 on t0.person_id = t4.person_id
+left outer join t5 on t0.person_id = t5.person_id
+left outer join t7 on t0.person_id = t7.person_id
+left outer join t8 on t0.person_id = t8.person_id
+left outer join t9 on t0.person_id = t9.person_id
+left outer join t10 on t0.person_id = t10.person_id
+left outer join t11 on t0.person_id = t11.person_id
+left outer join t13 on t0.person_id = t13.person_id
+left outer join t14 on t0.person_id = t14.person_id
+left outer join t15 on t0.person_id = t15.person_id
+left outer join t16 on t0.person_id = t16.person_id
+left outer join t17 on t0.person_id = t17.person_id
+left outer join t18 on t0.person_id = t18.person_id
+left outer join t19 on t0.person_id = t19.person_id
+left outer join t20 on t0.person_id = t20.person_id
+left outer join t21 on t0.person_id = t21.person_id
+left outer join t22 on t0.person_id = t22.person_id
+left outer join t23 on t0.person_id = t23.person_id
+left outer join t24 on t0.person_id = t24.person_id
+left outer join t26 on t0.person_id = t26.person_id
+left outer join t27 on t0.person_id = t27.person_id
+left outer join t28 on t0.person_id = t28.person_id
+left outer join t29 on t0.person_id = t29.person_id
+left outer join t30 on t0.person_id = t30.person_id
+left outer join t31 on t0.person_id = t31.person_id
+left outer join t33 on t0.person_id = t33.person_id
+left outer join t34 on t0.person_id = t34.person_id
+left outer join t35 on t0.person_id = t35.person_id
+left outer join t36 on t0.person_id = t36.person_id
+left outer join t37 on t0.person_id = t37.person_id
+left outer join t39 on t0.person_id = t39.person_id
+left outer join t40 on t0.person_id = t40.person_id
+left outer join t41 on t0.person_id = t41.person_id
+left outer join t42 on t0.person_id = t42.person_id
+left outer join t43 on t0.person_id = t43.person_id
+left outer join t44 on t0.person_id = t44.person_id
+left outer join t45 on t0.person_id = t45.person_id
+left outer join t46 on t0.person_id = t46.person_id
+left outer join t47 on t0.person_id = t47.person_id
+left outer join t48 on t0.person_id = t48.person_id
+left outer join t49 on t0.person_id = t49.person_id
+left outer join t50 on t0.person_id = t50.person_id
+left outer join t51 on t0.person_id = t51.person_id
+left outer join t52 on t0.person_id = t52.person_id
+left outer join t53 on t0.person_id = t53.person_id
+left outer join t54 on t0.person_id = t54.person_id
+left outer join t55 on t0.person_id = t55.person_id
+left outer join t56 on t0.person_id = t56.person_id
+left outer join t58 on t0.person_id = t58.person_id
+left outer join t59 on t0.person_id = t59.person_id
+left outer join t60 on t0.person_id = t60.person_id
+left outer join t61 on t0.person_id = t61.person_id
+left outer join t62 on t0.person_id = t62.person_id
+left outer join t64 on t0.person_id = t64.person_id
+left outer join t65 on t0.person_id = t65.person_id
+left outer join t66 on t0.person_id = t66.person_id
+left outer join t68 on t0.person_id = t68.person_id
+left outer join t69 on t0.person_id = t69.person_id
+left outer join t70 on t0.person_id = t70.person_id
+left outer join t71 on t0.person_id = t71.person_id
