@@ -618,7 +618,7 @@ class OmopParser(object):
             accuracy = roc_auc_score(val_y, preds)
             return accuracy
 
-        # tune hyperparameters
+        # use Optuna to tune hyperparameters
         sampler = TPESampler(seed=10)
         study = optuna.create_study(direction='maximize', sampler=sampler)
         study.optimize(objective_lgb, n_trials=15)
