@@ -1,7 +1,7 @@
 # A-LightGBM-Model-to-Predict-180-Days-Mortality-Using-EHR-Data
 
 #### Jifan Gao<sup>1,2</sup>, Guanhua Chen<sup>1,2</sup>
-<sup>1</sup> Department of Biostatistics and Medical Informatics, University of Wisconsin-Madison, Madison, Wisconsin, USA
+<sup>1</sup> Department of Biostatistics and Medical Informatics, University of Wisconsin-Madison, Madison, Wisconsin, USA <br/>
 <sup>2</sup> Contact: J.G. (jifan.gao@wisc.edu), G.C. (gchen25@wisc.edu)
 
 
